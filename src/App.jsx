@@ -11,7 +11,7 @@ function App() {
           <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Waitlist />} />
+              
               {/* <Route path="/contact" element={<Contact />} /> */}
             </Routes>
           </BrowserRouter>
