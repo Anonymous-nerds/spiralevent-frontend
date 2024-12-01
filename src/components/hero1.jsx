@@ -34,7 +34,7 @@ const hero1 = () => {
               <label className='p-20'>Email</label>
               <input type="email" className='field w-3/4' placeholder='Enter Your Email' required/>
             </div>
-            <button type='submit'>Register</button>
+            <button type='submit'>Join Waitlist</button>
           </form>
         </div>
         
