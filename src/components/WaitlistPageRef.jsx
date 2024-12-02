@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import heroimg from "../assets/rb_68859.png";
+import { useParams, useNavigate } from "react-router-dom";
 
-const WaitlistPage = () => {
+const WaitlistPageRef = () => {
+  const { code } = useParams();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    refID: "",
   });
 
   const handleChange = (e) => {
@@ -38,12 +41,12 @@ const WaitlistPage = () => {
 
           <div className="mb-8">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Get early access!
+              Earn Rewards by Referring Friends!
             </h2>
-            <p className="text-gray-600 mb-6">
+            {/* <p className="text-gray-600 mb-6">
               Sign up today and be among the first to experience the power of
               AI-driven event planning.
-            </p>
+            </p> */}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -103,6 +106,26 @@ const WaitlistPage = () => {
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
                 required
+                readOnly
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="refID"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Ref code
+              </label>
+              <input
+                type="text"
+                id="refID"
+                name="refID"
+                value={code}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
+                required
               />
             </div>
 
@@ -124,4 +147,4 @@ const WaitlistPage = () => {
   );
 };
 
-export default WaitlistPage;
+export default WaitlistPageRef;
