@@ -23,15 +23,17 @@ const WaitlistPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col lg:flex-row">
+    <div className="h-screen w-full flex flex-col lg:flex-row">
       {/* Form Section - Full width on mobile, half width on large screens */}
-      <div className="w-full lg:w-1/2 p-6 md:p-12 bg-neutral-100 flex items-center justify-center">
+      <div className="w-full h-screen lg:w-1/2 p-6 md:p-12 bg-neutral-100 flex items-center justify-center">
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
               Spiral<span className="text-pink-900">Event</span>
             </h3>
-            <p className="text-gray-600 text-sm mb-4">coming soon...</p>
+            <p className="text-gray-900 mt-1 text-sm mb-4 font-semibold">
+              Simplify Every Event with AI-Driven Solutions...
+            </p>
           </div>
 
           <div className="mb-8">
@@ -39,8 +41,8 @@ const WaitlistPage = () => {
               Get early access!
             </h2>
             <p className="text-gray-600 mb-6">
-              Be the first to join our Waitlist by creating a profile and
-              claiming a premium username.
+              Sign up today and be among the first to experience the power of
+              AI-driven event planning.
             </p>
           </div>
 
