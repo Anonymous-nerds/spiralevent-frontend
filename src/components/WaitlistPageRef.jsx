@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import heroimg from "../assets/rb_68859.png";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const WaitlistPageRef = () => {
-  const { code } = useParams();
+  const { refID } = useParams();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    refID: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [borderColor, setBorderColor] = useState("border-gray-300");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,10 +22,49 @@ const WaitlistPageRef = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // form submission logic here
-    console.log(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    setLoading(true); // Set loading state to true
+
+    // Validate the form inputs
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      toast.error("Please enter all required fields.");
+      setBorderColor("border-red-500"); // Highlight the border as red for invalid input
+      setLoading(false); // Reset loading state
+      return; // Stop execution if validation fails
+    } else {
+      setBorderColor("border-green-500"); // Highlight the border as green for valid input
+    }
+
+    try {
+      // Send the formData as a POST request
+      const response = await axios.post(
+        `https://api-spiralevent.vercel.app/waitlist/${refID}`,
+        formData // Directly pass formData without destructuring
+      );
+
+      // Handle response
+      if (response.data.error) {
+        toast.error(response.data.error); // Show error message from server
+      } else {
+        toast.success("Waitlisted successfully"); // Show success message
+        setFormData({ firstName: "", lastName: "", email: "" }); // Reset form fields
+        // Uncomment the next line to navigate to another page if necessary
+        // navigate("/");
+      }
+    } catch (error) {
+      // Handle errors appropriately
+      if (error.response) {
+        toast.error(error.response.data.message); // Server responded with an error
+      } else if (error.request) {
+        toast.error("No response received from the server."); // Request made but no response
+      } else {
+        toast.error("Error in setting up the request."); // General error
+      }
+      console.error(error);
+    } finally {
+      setLoading(false); // Reset loading state regardless of success or failure
+    }
   };
 
   return (
@@ -65,7 +107,7 @@ const WaitlistPageRef = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="First name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
+                  className={`w-full px-4 py-2 border ${borderColor} rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900`}
                   required
                 />
               </div>
@@ -84,7 +126,7 @@ const WaitlistPageRef = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   placeholder="Last name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
+                  className={`w-full px-4 py-2 border ${borderColor} rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900`}
                   required
                 />
               </div>
@@ -104,7 +146,7 @@ const WaitlistPageRef = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
+                className={`w-full px-4 py-2 border ${borderColor} rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900`}
                 required
                 readOnly
               />
@@ -121,8 +163,8 @@ const WaitlistPageRef = () => {
                 type="text"
                 id="refID"
                 name="refID"
-                value={code}
-                onChange={handleChange}
+                // value={code}
+                // onChange={handleChange}
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
                 required
@@ -133,7 +175,7 @@ const WaitlistPageRef = () => {
               type="submit"
               className="w-full bg-pink-900 text-white py-3 rounded-md hover:bg-pink-800 transition-colors duration-300 ease-in-out"
             >
-              Join Waitlist
+              {loading ? "Waitlisting..." : "Join Waitlist"}
             </button>
           </form>
         </div>
