@@ -1,7 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Waitlist from "./pages/Waitlist/Waitlist";
-import WaitlistRef from "./pages/WaitlistRef/WaitlistRef";
+import WaitlistRef from "./pages/WaitlistRef/WaitlistRef"; 
+import success from "./pages/Waitlist/success";
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Waitlist />} />
+              <Route path="/success" element={<success />}/>
               {/* <Route path="/" element={<Hero />} /> */}
               <Route path="/waitlist/ref/:code" element={<WaitlistRef />} />
             </Routes>
