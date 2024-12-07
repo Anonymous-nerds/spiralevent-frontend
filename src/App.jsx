@@ -1,8 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Hero from "./components/hero";
-import Hero1 from "./components/hero1";
-import Success from "./pages/Waitlist/Success";
+import Waitlist from "./pages/Waitlist/Waitlist";
+import WaitlistRef from "./pages/WaitlistRef/WaitlistRef";
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -13,10 +12,9 @@ function App() {
           <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Hero1 />} />
-              <Route path="/success" element={<Success/>} />
-               {/* <Route path="/" element={<Hero />} /> */}
-              {/* <Route path="/contact" element={<Contact />} /> */}
+              <Route path="/" element={<Waitlist />} />
+              {/* <Route path="/" element={<Hero />} /> */}
+              <Route path="/waitlist/ref/:code" element={<WaitlistRef />} />
             </Routes>
           </BrowserRouter>
         </div>
