@@ -15,7 +15,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Waitlist />} />
               {/* <Route path="/" element={<Hero />} /> */}
-              <Route path="/waitlist/ref/:code" element={<WaitlistRef />} />
+              <Route path="/waitlist/ref/:refID" element={<WaitlistRef />} />
               <Route path="/success" element={<Success />} />
             </Routes>
           </BrowserRouter>

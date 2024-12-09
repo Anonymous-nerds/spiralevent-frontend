@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import heroimg from "../assets/heroI.svg";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const WaitlistPage = () => {
+  const negivate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -47,8 +49,7 @@ const WaitlistPage = () => {
       } else {
         toast.success("Waitlisted successfully"); // Show success message
         setFormData({ firstName: "", lastName: "", email: "" }); // Reset form fields
-        // Uncomment the next line to navigate to another page if necessary
-        // navigate("/");
+        negivate("/success");
       }
     } catch (error) {
       // Handle errors appropriately

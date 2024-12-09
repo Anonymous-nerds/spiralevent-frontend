@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const WaitlistPageRef = () => {
+  const negivate = useNavigate();
   const { refID } = useParams();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -49,8 +50,7 @@ const WaitlistPageRef = () => {
       } else {
         toast.success("Waitlisted successfully"); // Show success message
         setFormData({ firstName: "", lastName: "", email: "" }); // Reset form fields
-        // Uncomment the next line to navigate to another page if necessary
-        // navigate("/");
+        negivate("/success");
       }
     } catch (error) {
       // Handle errors appropriately
@@ -159,14 +159,18 @@ const WaitlistPageRef = () => {
               >
                 Ref code
               </label>
+              {/* <p className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900">
+                {refID}
+              </p> */}
               <input
                 type="text"
                 id="refID"
                 name="refID"
-                // value={code}
-                // onChange={handleChange}
-                placeholder="Enter your email"
+                value={refID}
+                // onChange={refID}
+                // placeholder="Enter your email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900"
+                readOnly
                 required
               />
             </div>
