@@ -75,8 +75,11 @@ const WaitlistPageRef = () => {
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h3 className="text-3xl md:text-4xl font-bold flex gap-3 text-gray-800 mb-2">
-              <img src={logo} alt="" className="h-10" /> Spiral
-              <span className="text-pink-900">Event</span>
+              <img src={logo} alt="" className="h-10" />{" "}
+              <span>
+                Spiral
+                <span className="text-pink-900">Event</span>
+              </span>
             </h3>
             <p className="text-gray-900 mt-1 text-sm mb-4 font-semibold">
               Effortless Event Management, Powered by AI ...
