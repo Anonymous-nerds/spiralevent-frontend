@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import heroimg from "../assets/rb_68859.png";
+import heroimg from "../assets/heroI.svg";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
