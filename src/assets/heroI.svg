@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.69670057"
-     inkscape:cx="396.15297"
-     inkscape:cy="632.26588"
+     inkscape:zoom="0.98528339"
+     inkscape:cx="442.51228"
+     inkscape:cy="597.29009"
      inkscape:window-width="1366"
      inkscape:window-height="697"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" /><defs
+     inkscape:current-layer="g42" /><defs
      id="defs1"><path
        id="SVGID_1_"
        d="M219.204,199.296c4.473-9.628,1.921-22.042-5.988-29.125c-2.936-2.63-6.519-4.59-8.918-7.717      c-3.711-4.837-3.868-11.397-5.22-17.342c-2.342-10.295-8.472-22.668-18.057-27.096c-9.585-4.428-16.709,2.063-24.326,9.374      l21.565,101.868c7.648,6.326,20.358,5.138,26.701-2.497c7.256,5.719,19.478,3.083,23.731-5.119      C232.946,213.44,228.06,201.932,219.204,199.296z" /><path
@@ -632,12 +632,12 @@
    id="path64" />
 		<g
    id="g64"
-   style="fill:#3e3236;fill-opacity:1"
-   transform="translate(-5.5821504,-2.0298729)">
+   style="fill:#3f383e;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+   transform="matrix(0.81557438,0,0,0.81557438,88.494913,45.688745)">
 			
 				<text
    transform="translate(455.6198,268.2043)"
-   style="font-size:49.6064px;font-family:Poppins-ExtraBoldItalic;fill:#3e3236;fill-opacity:1"
+   style="font-size:49.6064px;font-family:Poppins-ExtraBoldItalic;fill:#3f383e;fill-opacity:1;stroke:#000000;stroke-opacity:1"
    id="text64">31</text>
 		</g>
 	</g>
