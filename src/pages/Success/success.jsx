@@ -23,7 +23,7 @@ const Success = () => {
           <p className="text-gray-800 text-lg">
             We`ve received your waitlist application
           </p>
-          <p className="text-pink-900 font-semibold">barbex.jy@gmail.com</p>
+          {/* <p className="text-pink-900 font-semibold">barbex.jy@gmail.com</p> */}
           <p className="text-gray-700 mt-2 text-sm">
             We`ll notify you when a spot becomes available
           </p>
