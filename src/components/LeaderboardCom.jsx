@@ -8,6 +8,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -56,22 +57,31 @@ const LeaderboardCom = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-neutral-100 py-5 px-3 sm:px-6 lg:px-5">
       <div className="max-w-4xl mx-auto">
-        <div className="flex gap-2">
+        <div className="flex gap-2 mb-8">
           <img className="w-20" src={logo} alt="logo" />
-          <h6 className="">Spiral Event</h6>
+          {/* <h6 className="">Spiral Event</h6> */}
         </div>
 
         <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-1">
           Leaderboard of Champions
         </h1>
-        <p className="mb-10">
+        <p className="text-center text-lg mb-2">
           Welcome to the Spiral Event Leaderboard – where participants shine and
           excellence is celebrated!
         </p>
 
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="mb-10 mt-5 flex justify-center">
+          <Link
+            className="text-center bg-pink-900 p-3 px-10 rounded-lg text-neutral-100 text-sm"
+            to={"/"}
+          >
+            Join the Waitlist Now
+          </Link>
+        </div>
+
+        <div className="bg-white mt-5 shadow-lg rounded-lg overflow-hidden">
           <div className="p-8">
             <table className="w-full">
               <thead>
@@ -153,6 +163,17 @@ const LeaderboardCom = () => {
             </button>
           </div>
         </div>
+        {/* content */}
+        <div className="my-10">
+          <h5 className="text-lg font-bold">Compete. Achieve. Celebrate!</h5>
+          <p className="mt-3">
+            The leaderboard is your stage to shine. Whether you’re aiming for
+            the top or improving your personal best, there’s always a reason to
+            participate. Push your limits, earn your rank, and let the world see
+            what you’re made of!
+          </p>
+        </div>
+        {/* end content */}
       </div>
     </div>
   );
