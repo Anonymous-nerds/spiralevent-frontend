@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../assets/spiraleE4.png";
 import {
   FaTrophy,
   FaMedal,
@@ -8,7 +9,7 @@ import {
 } from "react-icons/fa";
 import axios from "axios";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 const LeaderboardCom = () => {
   const [participants, setParticipants] = useState([]);
@@ -57,11 +58,20 @@ const LeaderboardCom = () => {
   return (
     <div className="min-h-screen bg-neutral-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center text-gray-900 mb-12">
-          Event Manager AI Leaderboard
-        </h1>
+        <div className="flex gap-2">
+          <img className="w-20" src={logo} alt="logo" />
+          <h6 className="">Spiral Event</h6>
+        </div>
 
-        <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
+        <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-1">
+          Leaderboard of Champions
+        </h1>
+        <p className="mb-10">
+          Welcome to the Spiral Event Leaderboard – where participants shine and
+          excellence is celebrated!
+        </p>
+
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="p-8">
             <table className="w-full">
               <thead>
@@ -103,23 +113,18 @@ const LeaderboardCom = () => {
                     </td>
                     <td className="py-6">
                       <div className="flex items-center">
-                        {/* <img
-                          src={participant.avatar}
-                          alt={participant.name}
-                          className="w-12 h-12 rounded-full mr-4 border-2 border-pink-200"
-                        /> */}
                         <img
                           src={`https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&clotheType=ShirtCrewNeck&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light&id=${participant.id}`}
                           alt={`${participant.name}'s avatar`}
                           className="w-12 h-12 rounded-full"
                         />
-                        <span className="font-medium text-gray-900 text-lg">
+                        <span className="font-medium text-gray-900 text-sm">
                           {participant.name}
                         </span>
                       </div>
                     </td>
                     <td className="py-6 text-right">
-                      <span className="font-semibold text-gray-900 text-lg">
+                      <span className="font-semibold text-gray-900 text-sm">
                         {participant.score}
                       </span>
                     </td>

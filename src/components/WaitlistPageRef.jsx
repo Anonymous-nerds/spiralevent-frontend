@@ -153,7 +153,6 @@ const WaitlistPageRef = () => {
                 placeholder="Enter your email"
                 className={`w-full px-4 py-2 border ${borderColor} rounded-md focus:outline-none focus:ring-2 focus:ring-pink-900`}
                 required
-                readOnly
               />
             </div>
 
