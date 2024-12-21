@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { FaInstagram } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import heroimg from "../assets/heroI.svg";
 import logo from "../assets/spiraleE4.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const WaitlistPage = () => {
   const negivate = useNavigate();
@@ -162,6 +165,29 @@ const WaitlistPage = () => {
               {loading ? "Waitlisting..." : "Join Waitlist"}
             </button>
           </form>
+          <div className="mt-5">
+            <p className="text-sm font-thin">
+              <span>Follow us on our social media :</span>
+            </p>
+            <p className="mt-1 flex gap-2 font-bold">
+              <Link
+                to={
+                  "https://www.instagram.com/social.spiralevent?igsh=dml6c3Buc213b2Y1"
+                }
+                target="_blank"
+              >
+                <FaInstagram size={19} className="text-pink-900" />
+              </Link>
+              <Link
+                to={
+                  "https://www.instagram.com/social.spiralevent?igsh=dml6c3Buc213b2Y1"
+                }
+                target="_blank"
+              >
+                <FaSquareXTwitter size={19} />
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
 
