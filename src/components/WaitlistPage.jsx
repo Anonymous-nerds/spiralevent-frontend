@@ -77,7 +77,7 @@ const WaitlistPage = () => {
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h3 className="text-3xl md:text-4xl font-bold flex gap-3 text-gray-800 mb-2">
-              <img src={logo} alt="" className="h-10" />{" "}
+              <img src={logo} alt="" className=" App-logo h-10" />{" "}
               <span>
                 Spiral
                 <span className="text-pink-900">Event</span>

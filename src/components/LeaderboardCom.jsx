@@ -60,7 +60,7 @@ const LeaderboardCom = () => {
     <div className="min-h-screen bg-neutral-100 py-5 px-3 sm:px-6 lg:px-5">
       <div className="max-w-4xl mx-auto">
         <div className="flex gap-2 mb-8">
-          <img className="w-20" src={logo} alt="logo" />
+          <img className="App-logo w-20" src={logo} alt="logo " />
           {/* <h6 className="">Spiral Event</h6> */}
         </div>
 
