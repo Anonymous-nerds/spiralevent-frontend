@@ -11,7 +11,7 @@ const NotFound = () => {
           </h2>
         </div>
 
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 400 300"
@@ -35,9 +35,9 @@ const NotFound = () => {
           </svg>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-4">
           <p className="text-gray-700 text-lg mb-4">
-            Oops! The page you`re looking for doesn`t exist.
+            Oops! The page you're looking for doesn't exist.
           </p>
           <p className="text-gray-600 text-sm mb-4">
             It might have been moved or deleted.
@@ -47,7 +47,7 @@ const NotFound = () => {
         <div>
           <button
             onClick={() => (window.location.href = "/")}
-            className="w-full py-3 bg-pink-900 text-white rounded-lg 
+            className="w-1/2 py-3 bg-pink-900 text-white rounded-lg 
             hover:bg-pink-700 transition-colors duration-300 
             focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
           >
