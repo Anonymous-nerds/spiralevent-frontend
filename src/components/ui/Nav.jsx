@@ -1,5 +1,5 @@
 // "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/spiraleE4.png";
@@ -7,37 +7,17 @@ import Logo from "../../assets/spiraleE4.png";
 // import User from "../assets/102716454.jpeg";
 
 const navigation = [
-  { name: "Overview", href: "/dashboard" },
+  { name: "Home", href: "/" },
   { name: "Explore", href: "/explore/event" },
   { name: "Buy Ticket", href: "/ticket" },
   { name: "Create an Event", href: "/Expanses" },
   { name: "Pirce", href: "/Customers" },
   { name: "Banner", href: "/Banner" },
-  { name: "Account", href: "/Account" },
 ];
 
 export default function Nav() {
-  const [userData, setUserData] = useState({});
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    // Retrieve the items from local storage
-    const storedEmail = localStorage.getItem("email");
-    const storedUserImage = localStorage.getItem("userImage");
-    const storedUsername = localStorage.getItem("username");
-    const storedName = localStorage.getItem("name");
-    const storedToken = localStorage.getItem("token");
-    const storedUserID = localStorage.getItem("userID");
-
-    setUserData({
-      email: storedEmail,
-      userImage: storedUserImage,
-      username: storedUsername,
-      name: storedName,
-      token: storedToken,
-      userID: storedUserID,
-    });
-  }, []);
 
   return (
     <div className="bg-transparent pb-24">
@@ -71,17 +51,19 @@ export default function Nav() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <div className="flex gap-3 rounded-full border border-black p-1">
-              <span className="py-2 px-1 text-sm" style={{ fontSize: "12px" }}>
-                {/* {userData.name} */}
-                Username
-              </span>
-              <span className="px-1">
-                <img className="w-8 rounded-full" src={Logo} alt="User"
-                // src={userData.userImage}
-                />
-              </span>
-            </div>
+            <a
+              href="/Register"
+              className="p-2 px-5 py-3 text-[12px] bg-pink-900 rounded-full m-2 icon"
+              style={{ letterSpacing: "1px" }}
+            >
+              <span className="text-white">Create an Account</span>
+            </a>
+            <a
+              href="/internship"
+              className="p-2 px-10 py-3 text-[12px] bg-transparent border border-pink-900  rounded-full m-2 icon"
+            >
+              <span className="text-pink-690 ">Sign In</span>
+            </a>
           </div>
         </nav>
         <hr className="bg-black" />
@@ -109,15 +91,20 @@ export default function Nav() {
                     </a>
                   ))}
                 </div>
-                <div className="w-[140px]">
-                  <div className="flex gap-3 rounded-full border border-black p-1">
-                    <span className="py-2 px-1 text-sm" style={{ fontSize: "12px" }}>
-                      {userData.name}
-                    </span>
-                    <span className="px-1">
-                      <img className="w-8 rounded-full" src={userData.userImage} alt="User" />
-                    </span>
-                  </div>
+                <div className="py-6 flex lg:flex-1 lg:justify-end">
+                  <a
+                    href="/Register"
+                    className="p-2 px-5 py-3 text-sm bg-blue-600 rounded-full m-2 icon"
+                    style={{ letterSpacing: "1px" }}
+                  >
+                    <span className="text-white">Create an Account</span>
+                  </a>
+                  <a
+                    href="/internship"
+                    className="p-2 px-5  py-3 text-sm bg-transparent border border-blue-600  rounded-full m-2 icon"
+                  >
+                    <span className="text-blue-600 ">Sign In</span>
+                  </a>
                 </div>
               </div>
             </div>

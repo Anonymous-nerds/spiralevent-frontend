@@ -1,26 +1,21 @@
 import { ArrowRight, Play } from 'lucide-react';
 import Nav from '../../components/ui/Nav';
 import User from "../../assets/logo-me.png"
-import Picture from "../../assets/landing.svg"
+import Picture from "../../assets/Banner.jpg"
 
 const Home = () => {
   return (
     <div className="max-w-full">
-      {/* Navigation */}
       <Nav />
 
       {/* Main Content */}
-      <div className=" max-w-full grid grid-cols-1 md:grid-cols-3 h-screen">
+      <div className=" max-w-full grid grid-cols-1 md:grid-cols-3 h-screen sm:py-10">
         {/* Left Column */}
-        <div className="col-span-1 md:col-span-2 p-6 bg-gray-40 border-b md:border-b-0 md:border-r border-gray-300">
+        <div className="col-span-1 md:col-span-2 md:p-6 bg-gray-40 border-b md:border-b-0 md:border-r border-gray-300">
           {/* Title Section */}
           <div className="">
             <div className="flex -space-x-2 mb-6">
-              <img
-                src={User}
-                alt="Team member"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
+              <img src={User} alt="Team member" className="w-8 h-8 rounded-full border-2 border-white" />
               <img
                 src={User}
                 alt="Team member"
@@ -33,7 +28,7 @@ const Home = () => {
               />
             </div>
             <div className='p-6'>
-              <h1 className="text-5xl lg:text-5xl font-bold text-black mb-6  text-center md:text-left sm:text-left">
+              <h1 className="text-5xl lg:text-5xl font-bold text-black mb-6 text-left">
                 Effortless Event Management, Powered by AI <br />
                 <span className="text-pink-900">~SpiralEvent</span>
               </h1>
@@ -89,7 +84,7 @@ const Home = () => {
               <img
                 src={Picture}
                 alt="Team working"
-                className="w-full h-screen max-w-full h-auto object-cover top-12 py-6 flex justify-center items-center h-full"
+                className="w-full  max-w-full h-auto object-cover top-12 py-6 flex justify-center items-center"
               />
             </div>
 
@@ -135,12 +130,12 @@ const Home = () => {
           </div>
 
           {/* Decorative Elements */}
-          <div className="absolute -top-4 -right-4 text-yellow-300 text-4xl">
+          {/* <div className="absolute -top-4 -right-4 text-yellow-300 text-4xl">
             ✱
           </div>
           <div className="absolute -bottom-4 right-16 text-gray-900 text-4xl">
             ✱
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
