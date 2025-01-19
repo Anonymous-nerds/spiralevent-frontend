@@ -1,7 +1,7 @@
 import { ArrowRight, Play } from 'lucide-react';
 import Nav from '../../components/ui/Nav';
 import User from "../../assets/logo-me.png"
-import Picture from "../../assets/Banner.jpg"
+import Picture from "../../assets/landing3.jpg"
 
 const Home = () => {
   return (
